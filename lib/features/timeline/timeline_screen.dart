@@ -31,6 +31,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
   }
 
   void _scrollToCurrentTime() {
+    if (!_scrollController.hasClients) return;
     final settings = ref.read(settingsProvider).valueOrNull;
     final startHour = settings?.wakeTime.hour ?? 7;
     final now = DateTime.now();
@@ -38,7 +39,7 @@ class _TimelineScreenState extends ConsumerState<TimelineScreen> {
     if (minutesSinceStart > 0) {
       final offset = (minutesSinceStart / 30) * TimeSlot.slotHeight - 100;
       _scrollController.animateTo(
-        offset.clamp(0, _scrollController.position.maxScrollExtent),
+        offset.clamp(0.0, _scrollController.position.maxScrollExtent),
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeOut,
       );

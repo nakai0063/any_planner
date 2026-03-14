@@ -20,6 +20,10 @@
             "package_name": "com.anyplanner.any_planner",
             "certificate_hash": "22a429e5dea5beefa86ba5121567bb323941fa83"
           }
+        },
+        {
+          "client_id": "580892580621-tpulfeh35oeiie1i9k178s6tlfd61hav.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
@@ -29,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580892580621-tpulfeh35oeiie1i9k178s6tlfd61hav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

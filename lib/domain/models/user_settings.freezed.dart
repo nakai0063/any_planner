@@ -22,6 +22,14 @@ mixin _$UserSettings {
   int get reminderBeforeMinutes => throw _privateConstructorUsedError;
   int get snoozeMinutes => throw _privateConstructorUsedError;
   bool get notificationsEnabled => throw _privateConstructorUsedError;
+  String get themeId => throw _privateConstructorUsedError;
+  String get darkMode => throw _privateConstructorUsedError;
+  String get language => throw _privateConstructorUsedError;
+  int get firstDayOfWeek => throw _privateConstructorUsedError;
+  int get incompleteReminderDelay => throw _privateConstructorUsedError;
+  bool get calendarSyncEnabled => throw _privateConstructorUsedError;
+  int get allDayNotificationHour => throw _privateConstructorUsedError;
+  int get allDayNotificationMinute => throw _privateConstructorUsedError;
 
   /// Create a copy of UserSettings
   /// with the given fields replaced by the non-null parameter values.
@@ -43,6 +51,14 @@ abstract class $UserSettingsCopyWith<$Res> {
     int reminderBeforeMinutes,
     int snoozeMinutes,
     bool notificationsEnabled,
+    String themeId,
+    String darkMode,
+    String language,
+    int firstDayOfWeek,
+    int incompleteReminderDelay,
+    bool calendarSyncEnabled,
+    int allDayNotificationHour,
+    int allDayNotificationMinute,
   });
 }
 
@@ -66,6 +82,14 @@ class _$UserSettingsCopyWithImpl<$Res, $Val extends UserSettings>
     Object? reminderBeforeMinutes = null,
     Object? snoozeMinutes = null,
     Object? notificationsEnabled = null,
+    Object? themeId = null,
+    Object? darkMode = null,
+    Object? language = null,
+    Object? firstDayOfWeek = null,
+    Object? incompleteReminderDelay = null,
+    Object? calendarSyncEnabled = null,
+    Object? allDayNotificationHour = null,
+    Object? allDayNotificationMinute = null,
   }) {
     return _then(
       _value.copyWith(
@@ -89,6 +113,38 @@ class _$UserSettingsCopyWithImpl<$Res, $Val extends UserSettings>
                 ? _value.notificationsEnabled
                 : notificationsEnabled // ignore: cast_nullable_to_non_nullable
                       as bool,
+            themeId: null == themeId
+                ? _value.themeId
+                : themeId // ignore: cast_nullable_to_non_nullable
+                      as String,
+            darkMode: null == darkMode
+                ? _value.darkMode
+                : darkMode // ignore: cast_nullable_to_non_nullable
+                      as String,
+            language: null == language
+                ? _value.language
+                : language // ignore: cast_nullable_to_non_nullable
+                      as String,
+            firstDayOfWeek: null == firstDayOfWeek
+                ? _value.firstDayOfWeek
+                : firstDayOfWeek // ignore: cast_nullable_to_non_nullable
+                      as int,
+            incompleteReminderDelay: null == incompleteReminderDelay
+                ? _value.incompleteReminderDelay
+                : incompleteReminderDelay // ignore: cast_nullable_to_non_nullable
+                      as int,
+            calendarSyncEnabled: null == calendarSyncEnabled
+                ? _value.calendarSyncEnabled
+                : calendarSyncEnabled // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            allDayNotificationHour: null == allDayNotificationHour
+                ? _value.allDayNotificationHour
+                : allDayNotificationHour // ignore: cast_nullable_to_non_nullable
+                      as int,
+            allDayNotificationMinute: null == allDayNotificationMinute
+                ? _value.allDayNotificationMinute
+                : allDayNotificationMinute // ignore: cast_nullable_to_non_nullable
+                      as int,
           )
           as $Val,
     );
@@ -110,6 +166,14 @@ abstract class _$$UserSettingsImplCopyWith<$Res>
     int reminderBeforeMinutes,
     int snoozeMinutes,
     bool notificationsEnabled,
+    String themeId,
+    String darkMode,
+    String language,
+    int firstDayOfWeek,
+    int incompleteReminderDelay,
+    bool calendarSyncEnabled,
+    int allDayNotificationHour,
+    int allDayNotificationMinute,
   });
 }
 
@@ -132,6 +196,14 @@ class __$$UserSettingsImplCopyWithImpl<$Res>
     Object? reminderBeforeMinutes = null,
     Object? snoozeMinutes = null,
     Object? notificationsEnabled = null,
+    Object? themeId = null,
+    Object? darkMode = null,
+    Object? language = null,
+    Object? firstDayOfWeek = null,
+    Object? incompleteReminderDelay = null,
+    Object? calendarSyncEnabled = null,
+    Object? allDayNotificationHour = null,
+    Object? allDayNotificationMinute = null,
   }) {
     return _then(
       _$UserSettingsImpl(
@@ -155,6 +227,38 @@ class __$$UserSettingsImplCopyWithImpl<$Res>
             ? _value.notificationsEnabled
             : notificationsEnabled // ignore: cast_nullable_to_non_nullable
                   as bool,
+        themeId: null == themeId
+            ? _value.themeId
+            : themeId // ignore: cast_nullable_to_non_nullable
+                  as String,
+        darkMode: null == darkMode
+            ? _value.darkMode
+            : darkMode // ignore: cast_nullable_to_non_nullable
+                  as String,
+        language: null == language
+            ? _value.language
+            : language // ignore: cast_nullable_to_non_nullable
+                  as String,
+        firstDayOfWeek: null == firstDayOfWeek
+            ? _value.firstDayOfWeek
+            : firstDayOfWeek // ignore: cast_nullable_to_non_nullable
+                  as int,
+        incompleteReminderDelay: null == incompleteReminderDelay
+            ? _value.incompleteReminderDelay
+            : incompleteReminderDelay // ignore: cast_nullable_to_non_nullable
+                  as int,
+        calendarSyncEnabled: null == calendarSyncEnabled
+            ? _value.calendarSyncEnabled
+            : calendarSyncEnabled // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        allDayNotificationHour: null == allDayNotificationHour
+            ? _value.allDayNotificationHour
+            : allDayNotificationHour // ignore: cast_nullable_to_non_nullable
+                  as int,
+        allDayNotificationMinute: null == allDayNotificationMinute
+            ? _value.allDayNotificationMinute
+            : allDayNotificationMinute // ignore: cast_nullable_to_non_nullable
+                  as int,
       ),
     );
   }
@@ -169,6 +273,14 @@ class _$UserSettingsImpl implements _UserSettings {
     this.reminderBeforeMinutes = 5,
     this.snoozeMinutes = 15,
     this.notificationsEnabled = true,
+    this.themeId = 'default',
+    this.darkMode = 'system',
+    this.language = 'ja',
+    this.firstDayOfWeek = 1,
+    this.incompleteReminderDelay = 30,
+    this.calendarSyncEnabled = false,
+    this.allDayNotificationHour = 9,
+    this.allDayNotificationMinute = 0,
   });
 
   @override
@@ -186,10 +298,34 @@ class _$UserSettingsImpl implements _UserSettings {
   @override
   @JsonKey()
   final bool notificationsEnabled;
+  @override
+  @JsonKey()
+  final String themeId;
+  @override
+  @JsonKey()
+  final String darkMode;
+  @override
+  @JsonKey()
+  final String language;
+  @override
+  @JsonKey()
+  final int firstDayOfWeek;
+  @override
+  @JsonKey()
+  final int incompleteReminderDelay;
+  @override
+  @JsonKey()
+  final bool calendarSyncEnabled;
+  @override
+  @JsonKey()
+  final int allDayNotificationHour;
+  @override
+  @JsonKey()
+  final int allDayNotificationMinute;
 
   @override
   String toString() {
-    return 'UserSettings(wakeTime: $wakeTime, sleepTime: $sleepTime, reminderBeforeMinutes: $reminderBeforeMinutes, snoozeMinutes: $snoozeMinutes, notificationsEnabled: $notificationsEnabled)';
+    return 'UserSettings(wakeTime: $wakeTime, sleepTime: $sleepTime, reminderBeforeMinutes: $reminderBeforeMinutes, snoozeMinutes: $snoozeMinutes, notificationsEnabled: $notificationsEnabled, themeId: $themeId, darkMode: $darkMode, language: $language, firstDayOfWeek: $firstDayOfWeek, incompleteReminderDelay: $incompleteReminderDelay, calendarSyncEnabled: $calendarSyncEnabled, allDayNotificationHour: $allDayNotificationHour, allDayNotificationMinute: $allDayNotificationMinute)';
   }
 
   @override
@@ -206,7 +342,28 @@ class _$UserSettingsImpl implements _UserSettings {
             (identical(other.snoozeMinutes, snoozeMinutes) ||
                 other.snoozeMinutes == snoozeMinutes) &&
             (identical(other.notificationsEnabled, notificationsEnabled) ||
-                other.notificationsEnabled == notificationsEnabled));
+                other.notificationsEnabled == notificationsEnabled) &&
+            (identical(other.themeId, themeId) || other.themeId == themeId) &&
+            (identical(other.darkMode, darkMode) ||
+                other.darkMode == darkMode) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.firstDayOfWeek, firstDayOfWeek) ||
+                other.firstDayOfWeek == firstDayOfWeek) &&
+            (identical(
+                  other.incompleteReminderDelay,
+                  incompleteReminderDelay,
+                ) ||
+                other.incompleteReminderDelay == incompleteReminderDelay) &&
+            (identical(other.calendarSyncEnabled, calendarSyncEnabled) ||
+                other.calendarSyncEnabled == calendarSyncEnabled) &&
+            (identical(other.allDayNotificationHour, allDayNotificationHour) ||
+                other.allDayNotificationHour == allDayNotificationHour) &&
+            (identical(
+                  other.allDayNotificationMinute,
+                  allDayNotificationMinute,
+                ) ||
+                other.allDayNotificationMinute == allDayNotificationMinute));
   }
 
   @override
@@ -217,6 +374,14 @@ class _$UserSettingsImpl implements _UserSettings {
     reminderBeforeMinutes,
     snoozeMinutes,
     notificationsEnabled,
+    themeId,
+    darkMode,
+    language,
+    firstDayOfWeek,
+    incompleteReminderDelay,
+    calendarSyncEnabled,
+    allDayNotificationHour,
+    allDayNotificationMinute,
   );
 
   /// Create a copy of UserSettings
@@ -235,6 +400,14 @@ abstract class _UserSettings implements UserSettings {
     final int reminderBeforeMinutes,
     final int snoozeMinutes,
     final bool notificationsEnabled,
+    final String themeId,
+    final String darkMode,
+    final String language,
+    final int firstDayOfWeek,
+    final int incompleteReminderDelay,
+    final bool calendarSyncEnabled,
+    final int allDayNotificationHour,
+    final int allDayNotificationMinute,
   }) = _$UserSettingsImpl;
 
   @override
@@ -247,6 +420,22 @@ abstract class _UserSettings implements UserSettings {
   int get snoozeMinutes;
   @override
   bool get notificationsEnabled;
+  @override
+  String get themeId;
+  @override
+  String get darkMode;
+  @override
+  String get language;
+  @override
+  int get firstDayOfWeek;
+  @override
+  int get incompleteReminderDelay;
+  @override
+  bool get calendarSyncEnabled;
+  @override
+  int get allDayNotificationHour;
+  @override
+  int get allDayNotificationMinute;
 
   /// Create a copy of UserSettings
   /// with the given fields replaced by the non-null parameter values.

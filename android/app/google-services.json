@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "580892580621",
+    "project_id": "my-pllaner",
+    "storage_bucket": "my-pllaner.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580892580621:android:79ed13b6b015fe18656e44",
+        "android_client_info": {
+          "package_name": "com.anyplanner.any_planner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDULODan-cB9bMOnBq3dNwxaKCYiKRBeYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

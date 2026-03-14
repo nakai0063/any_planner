@@ -32,6 +32,10 @@ mixin _$Task {
   int get snoozeCount => throw _privateConstructorUsedError;
   DateTime? get snoozedUntil => throw _privateConstructorUsedError;
   int get sortOrder => throw _privateConstructorUsedError;
+  DateTime? get deadline => throw _privateConstructorUsedError;
+  DateTime? get completedAt => throw _privateConstructorUsedError;
+  List<String> get images => throw _privateConstructorUsedError;
+  bool get moveToLaterWhenOverdue => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
@@ -62,6 +66,10 @@ abstract class $TaskCopyWith<$Res> {
     int snoozeCount,
     DateTime? snoozedUntil,
     int sortOrder,
+    DateTime? deadline,
+    DateTime? completedAt,
+    List<String> images,
+    bool moveToLaterWhenOverdue,
     DateTime createdAt,
     DateTime updatedAt,
   });
@@ -97,6 +105,10 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? snoozeCount = null,
     Object? snoozedUntil = freezed,
     Object? sortOrder = null,
+    Object? deadline = freezed,
+    Object? completedAt = freezed,
+    Object? images = null,
+    Object? moveToLaterWhenOverdue = null,
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
@@ -162,6 +174,22 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
                 ? _value.sortOrder
                 : sortOrder // ignore: cast_nullable_to_non_nullable
                       as int,
+            deadline: freezed == deadline
+                ? _value.deadline
+                : deadline // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            completedAt: freezed == completedAt
+                ? _value.completedAt
+                : completedAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime?,
+            images: null == images
+                ? _value.images
+                : images // ignore: cast_nullable_to_non_nullable
+                      as List<String>,
+            moveToLaterWhenOverdue: null == moveToLaterWhenOverdue
+                ? _value.moveToLaterWhenOverdue
+                : moveToLaterWhenOverdue // ignore: cast_nullable_to_non_nullable
+                      as bool,
             createdAt: null == createdAt
                 ? _value.createdAt
                 : createdAt // ignore: cast_nullable_to_non_nullable
@@ -200,6 +228,10 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
     int snoozeCount,
     DateTime? snoozedUntil,
     int sortOrder,
+    DateTime? deadline,
+    DateTime? completedAt,
+    List<String> images,
+    bool moveToLaterWhenOverdue,
     DateTime createdAt,
     DateTime updatedAt,
   });
@@ -232,6 +264,10 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? snoozeCount = null,
     Object? snoozedUntil = freezed,
     Object? sortOrder = null,
+    Object? deadline = freezed,
+    Object? completedAt = freezed,
+    Object? images = null,
+    Object? moveToLaterWhenOverdue = null,
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
@@ -297,6 +333,22 @@ class __$$TaskImplCopyWithImpl<$Res>
             ? _value.sortOrder
             : sortOrder // ignore: cast_nullable_to_non_nullable
                   as int,
+        deadline: freezed == deadline
+            ? _value.deadline
+            : deadline // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        completedAt: freezed == completedAt
+            ? _value.completedAt
+            : completedAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime?,
+        images: null == images
+            ? _value._images
+            : images // ignore: cast_nullable_to_non_nullable
+                  as List<String>,
+        moveToLaterWhenOverdue: null == moveToLaterWhenOverdue
+            ? _value.moveToLaterWhenOverdue
+            : moveToLaterWhenOverdue // ignore: cast_nullable_to_non_nullable
+                  as bool,
         createdAt: null == createdAt
             ? _value.createdAt
             : createdAt // ignore: cast_nullable_to_non_nullable
@@ -329,9 +381,13 @@ class _$TaskImpl implements _Task {
     this.snoozeCount = 0,
     this.snoozedUntil,
     this.sortOrder = 0,
+    this.deadline,
+    this.completedAt,
+    final List<String> images = const [],
+    this.moveToLaterWhenOverdue = false,
     required this.createdAt,
     required this.updatedAt,
-  });
+  }) : _images = images;
 
   @override
   final String id;
@@ -368,13 +424,29 @@ class _$TaskImpl implements _Task {
   @JsonKey()
   final int sortOrder;
   @override
+  final DateTime? deadline;
+  @override
+  final DateTime? completedAt;
+  final List<String> _images;
+  @override
+  @JsonKey()
+  List<String> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  @JsonKey()
+  final bool moveToLaterWhenOverdue;
+  @override
   final DateTime createdAt;
   @override
   final DateTime updatedAt;
 
   @override
   String toString() {
-    return 'Task(id: $id, title: $title, type: $type, status: $status, targetDate: $targetDate, scheduledStart: $scheduledStart, durationMinutes: $durationMinutes, memo: $memo, iconName: $iconName, colorValue: $colorValue, isPinned: $isPinned, routineId: $routineId, snoozeCount: $snoozeCount, snoozedUntil: $snoozedUntil, sortOrder: $sortOrder, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Task(id: $id, title: $title, type: $type, status: $status, targetDate: $targetDate, scheduledStart: $scheduledStart, durationMinutes: $durationMinutes, memo: $memo, iconName: $iconName, colorValue: $colorValue, isPinned: $isPinned, routineId: $routineId, snoozeCount: $snoozeCount, snoozedUntil: $snoozedUntil, sortOrder: $sortOrder, deadline: $deadline, completedAt: $completedAt, images: $images, moveToLaterWhenOverdue: $moveToLaterWhenOverdue, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -407,6 +479,13 @@ class _$TaskImpl implements _Task {
                 other.snoozedUntil == snoozedUntil) &&
             (identical(other.sortOrder, sortOrder) ||
                 other.sortOrder == sortOrder) &&
+            (identical(other.deadline, deadline) ||
+                other.deadline == deadline) &&
+            (identical(other.completedAt, completedAt) ||
+                other.completedAt == completedAt) &&
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.moveToLaterWhenOverdue, moveToLaterWhenOverdue) ||
+                other.moveToLaterWhenOverdue == moveToLaterWhenOverdue) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -414,7 +493,7 @@ class _$TaskImpl implements _Task {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     runtimeType,
     id,
     title,
@@ -431,9 +510,13 @@ class _$TaskImpl implements _Task {
     snoozeCount,
     snoozedUntil,
     sortOrder,
+    deadline,
+    completedAt,
+    const DeepCollectionEquality().hash(_images),
+    moveToLaterWhenOverdue,
     createdAt,
     updatedAt,
-  );
+  ]);
 
   /// Create a copy of Task
   /// with the given fields replaced by the non-null parameter values.
@@ -461,6 +544,10 @@ abstract class _Task implements Task {
     final int snoozeCount,
     final DateTime? snoozedUntil,
     final int sortOrder,
+    final DateTime? deadline,
+    final DateTime? completedAt,
+    final List<String> images,
+    final bool moveToLaterWhenOverdue,
     required final DateTime createdAt,
     required final DateTime updatedAt,
   }) = _$TaskImpl;
@@ -495,6 +582,14 @@ abstract class _Task implements Task {
   DateTime? get snoozedUntil;
   @override
   int get sortOrder;
+  @override
+  DateTime? get deadline;
+  @override
+  DateTime? get completedAt;
+  @override
+  List<String> get images;
+  @override
+  bool get moveToLaterWhenOverdue;
   @override
   DateTime get createdAt;
   @override

@@ -279,7 +279,7 @@ class _DurationSelector extends StatelessWidget {
 
   const _DurationSelector({required this.value, required this.onChanged});
 
-  static const _options = [15, 30, 45, 60, 90, 120];
+  static const _options = [5, 10, 15, 30, 45, 60, 90, 120, 180, 240, 300];
 
   @override
   Widget build(BuildContext context) {

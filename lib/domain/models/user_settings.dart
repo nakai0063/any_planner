@@ -11,5 +11,13 @@ class UserSettings with _$UserSettings {
     @Default(5) int reminderBeforeMinutes,
     @Default(15) int snoozeMinutes,
     @Default(true) bool notificationsEnabled,
+    @Default('default') String themeId,
+    @Default('system') String darkMode,
+    @Default('ja') String language,
+    @Default(1) int firstDayOfWeek,
+    @Default(30) int incompleteReminderDelay,
+    @Default(false) bool calendarSyncEnabled,
+    @Default(9) int allDayNotificationHour,
+    @Default(0) int allDayNotificationMinute,
   }) = _UserSettings;
 }

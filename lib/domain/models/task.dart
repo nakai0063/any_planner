@@ -22,6 +22,10 @@ class Task with _$Task {
     @Default(0) int snoozeCount,
     DateTime? snoozedUntil,
     @Default(0) int sortOrder,
+    DateTime? deadline,
+    DateTime? completedAt,
+    @Default([]) List<String> images,
+    @Default(false) bool moveToLaterWhenOverdue,
     required DateTime createdAt,
     required DateTime updatedAt,
   }) = _Task;

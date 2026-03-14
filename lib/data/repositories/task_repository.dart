@@ -18,7 +18,7 @@ class TaskRepository {
 
   Stream<List<Task>> watchScheduledTasks(DateTime date) {
     final uid = _uid;
-    if (uid == null) return const Stream.empty();
+    if (uid == null) return Stream.value([]);
 
     final start = Timestamp.fromDate(DateTime(date.year, date.month, date.day));
     final end =
@@ -40,7 +40,7 @@ class TaskRepository {
 
   Stream<List<Task>> watchLaterTasks(DateTime date) {
     final uid = _uid;
-    if (uid == null) return const Stream.empty();
+    if (uid == null) return Stream.value([]);
 
     final start = Timestamp.fromDate(DateTime(date.year, date.month, date.day));
     final end =
@@ -59,7 +59,7 @@ class TaskRepository {
 
   Stream<List<Task>> watchTasksForDate(DateTime date) {
     final uid = _uid;
-    if (uid == null) return const Stream.empty();
+    if (uid == null) return Stream.value([]);
 
     final start = Timestamp.fromDate(DateTime(date.year, date.month, date.day));
     final end =

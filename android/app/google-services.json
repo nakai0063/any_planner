@@ -12,7 +12,16 @@
           "package_name": "com.anyplanner.any_planner"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "580892580621-atjir5g9ffl3sc4mva4r01fq1masvm0n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anyplanner.any_planner",
+            "certificate_hash": "22a429e5dea5beefa86ba5121567bb323941fa83"
+          }
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDULODan-cB9bMOnBq3dNwxaKCYiKRBeYQ"
